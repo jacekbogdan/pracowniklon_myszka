@@ -1,0 +1,84 @@
+/*kolory warst*/
+.st0{fill:#E6E6E6;}
+	.st1{fill:none;stroke:#F2CAC2;stroke-width:15;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:#F2F2F2;}
+	.st3{fill:#F2DEDA;}
+	.st4{fill:#F2CAC2;}
+	.st5{fill:#999999;}
+	.st6{fill:#FFFFFF;}
+	.st7{fill:#FF957D;}
+	.st8{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-miterlimit:10;}
+
+body {
+    background-color: #2E3192;
+}
+
+/*layout contenera z myszą i tekstem*/
+#mouse-app-container {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 600px;
+    right: 0;
+    bottom: 0;
+}
+
+#mouse-container {
+    width: 75%;
+}
+
+#text-container {
+    width: 25%;
+}
+
+#text-cloud {
+    background-color: white;
+    padding: 15px;
+}
+
+/*krótkie zdanie */
+.short-sentence #mouth {
+    animation: mouth-open;
+    animation-duration: 0.2s;
+    animation-iteration-count: 5;
+}
+/*oczy w lewo i prawo*/
+.eyes-left-right #eyes {
+    animation: eyes-left-right;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+}
+/*mrugnięcie*/
+.eyes-blink #right-eye, .eyes-blink #left-eye {
+    animation: eye-closed;
+    animation-duration: 0.2s;
+}
+
+/*elementarne zdarzenia - takie, z których skłądają się reakcje myszki*/
+/*otwarcie buzi*/
+@keyframes mouth-open {
+    50% {
+        d: path("M187.69,218.04l66.23-2.26c0,0,3.07,23.05-30.07,25.18C190.71,243.09,187.69,218.04,187.69,218.04z");
+      }
+    }
+/*zamknięcie oczu*/
+@keyframes eye-closed {
+    50% {
+        transform: scaley(0.1);
+    }
+}
+/*oczy w lewo i w prawo*/
+@keyframes eyes-left-right {
+    20% {
+        transform: translateX(-15px);
+    }
+    40% {
+        transform: translateX(-15px);
+    }
+    60% {
+        transform: translateX(12px);
+    }
+    80% {
+        transform: translateX(12px);
+    }
+}
